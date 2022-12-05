@@ -21,6 +21,44 @@ html {
   --white: hsl(0, 0%, 100%);
 }
 
+/* Header */
+
+nav .navbar-nav .nav-link {
+  color: var(--grayish-blue);
+}
+
+nav .navbar-nav .nav-link:hover {
+  border-bottom: 3px solid var(--lime-green);
+  color: black;
+  transition: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.btn-primary {
+  background-color: inherit;
+  border: none;
+}
+
+.btn-primary:focus {
+  background-color: white;
+  border-color: none;
+  color: hsl(0, 0%, 100%);
+  box-shadow: none;
+}
+.offcanvas {
+  height: 80vh;
+}
+
+.offcanvas-body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.offcanvas-item {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 /* Intro */
 #intro .intro-img {
   background-image: url("/images/bg-intro-mobile.svg");
@@ -39,13 +77,14 @@ html {
 
 #intro .intro-text p {
   font-family: "Public Sans";
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   color: var(--grayish-blue);
   line-height: 1.5;
 }
 
 #intro .intro-text .btn-intro,
-.btn-footer {
+.btn-footer,
+.btn-nav {
   background-image: linear-gradient(
     to right,
     hsl(136, 65%, 51%) 0%,
@@ -63,7 +102,8 @@ html {
 }
 
 #intro .intro-text .btn-intro:hover,
-.btn-footer:hover {
+.btn-footer:hover,
+.btn-nav:hover {
   color: #fff;
   text-decoration: none;
   opacity: 70%;
@@ -127,6 +167,12 @@ html {
   line-height: 1.3;
   color: var(--grayish-blue);
 }
+
+#article .article-content .card-body .card-header:hover {
+  color: var(--lime-green);
+  transition: 0.3s ease-in-out;
+}
+
 /* Footer */
 .footer {
   background-color: var(--dark-blue);
@@ -152,10 +198,40 @@ html {
   font-size: 0.8rem;
   color: var(--grayish-blue);
 }
+
+.footer .footer-logo img svg g path ::-ms-fill {
+  color: hsl(0, 0%, 100%);
+}
 .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+@media (min-width: 786px) {
+  section #intro {
+    background-image: url("/images/bg-intro-desktop.svg");
+    background-repeat: repeat;
+    background-size: contain;
+    position: relative;
+  }
+  #intro .intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 0 2000px 0px 0px;
+  }
+  #intro .intro-text h1 {
+    font-size: 32px;
+    padding: 0 2000px 0px 0px;
+  }
+  #intro .intro-text p {
+    font-size: 18px;
+  }
+
+  #intro .intro-img {
+    background-image: none;
+  }
 }
